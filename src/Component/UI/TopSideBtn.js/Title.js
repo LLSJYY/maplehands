@@ -1,7 +1,8 @@
 const Title = () => {
   const spanStyle = {
+    "font-size" : "1.25rem",
     position : "absolute",
-    margin : "1rem 6.5rem",
+    margin : "2rem 3rem",
 
   }
   

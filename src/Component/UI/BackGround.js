@@ -11,6 +11,7 @@ const BackGround = () => {
     <Alert/>
     <Title/>
     </header>
+    <section1/>
     <MainPageBtn/>
     </>
   );

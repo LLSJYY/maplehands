@@ -9,28 +9,29 @@ const CharInfo = () => {
   const bookmarkIMG = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRYrUR6Nkx5F-u4mvQFHrDKVts6KAGTKFwGA&usqp=CAU"
   const handleTouchStart = (event) => {
     setTouchStart(event.targetTouches[0].clientX)
-  
   }
   const handleTouchMove = (event) => {
     
     setTouchEnd(event.targetTouches[0].clientX)
     
   }
-  
-  const handleTouchEnd = (event) => {
-    if(touchEnd-touchStart > 150){
-      setIsSwipe((isSwipe < 0 && isSwipe+414));
-    }
-    if(touchEnd-touchStart < -  150){
-      setIsSwipe((isSwipe-414 ));
-    }
-  }
-  
-  console.log(isSwipe);
-  return (
+    return (
     <div className="slider-wrapper" >
       <ContextWorld.Consumer>{
         ({ char, world }) => {
+          const handleTouchEnd = (event) => {
+            if(touchEnd-touchStart > 150){
+              setIsSwipe((isSwipe < 0 && isSwipe+414));
+            }
+            if(touchEnd-touchStart < -  150){
+              if(isSwipe === -(414 * ((char.length)-1))){
+                setIsSwipe(0);
+                
+            }else {
+              setIsSwipe((isSwipe-414));
+            }
+            }
+          }
           // eslint-disable-next-line no-lone-blocks
           {
             return char.map((el, index) => {

@@ -1,8 +1,8 @@
 import { React, useState } from "react"
 import ReactModal from 'react-modal';
+import ContextWorld from "../ContextWorld";
 
-
-const WolrdChoice = () => {
+const WolrdChoice = (props) => {
   const [isOpen, setIsOpen] = useState(false);
   const spanStyle = {
     fontSize: '0.75rem',
@@ -46,11 +46,17 @@ const WolrdChoice = () => {
           padding: '20px'
         }
       }} isOpen={isOpen}
-      >
-
+      ><ul style={{marginBottom:"1rem"}}>월드 선택
+          <ContextWorld.Consumer>{
+          ({store})=>  store.map((el,index)=> <button key = {index} onClick={()=>{{props.setWorld(el.world); return setIsOpen(false);} }}style={{display:"flex",border:'none',backgroundColor:'#fff', marginTop:'1rem'}}><img src={`${el.img}`} alt=""></img>{el.world}</button>)}
+          </ContextWorld.Consumer>
+        </ul>
       </ReactModal>
     </>
+
+
 
   )
 }
 export default WolrdChoice;
+// store.filter((el)=><li>{el}</li>

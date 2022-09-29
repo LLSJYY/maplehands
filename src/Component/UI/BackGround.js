@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import Hamburger from "./TopSideBtn.js/Hamburger";
 import Alert from "./TopSideBtn.js/Alert";
 import Title from "./TopSideBtn.js/Title";
-import { MainPageBtn } from "./MainPageBtn";
 import WorldChoice from "../section/WorldChoice";
 import ContextWorld from "../ContextWorld";
 import ContextChar from "../ContextChar";
@@ -58,7 +57,6 @@ const BackGround = () => {
         <div>
           <CharCard/>
         </div>
-        <MainPageBtn />
       </ContextWorld.Provider>
     </>
   );

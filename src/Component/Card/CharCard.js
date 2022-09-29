@@ -1,14 +1,20 @@
-import React from "react";
+import {React,useState} from "react";
 import ContextWorld from "../ContextWorld";
 import CharInfo from "./CharInfo";
+import MainPageBtn from "../UI/MainPageBtn";
 import './scroll.css'
+
 const CharCard = () => {
- 
-  
+  const [displayCard,setDisplayCard] = useState(true);
+  const cardHandler = (status) => {
+    setDisplayCard(status);
+  }  
 
   return (
-    <div className="slider-container" style={{}}>
-     <CharInfo/>
+    <div className="slider-container" >
+     { displayCard ? <CharInfo/> : ""}
+    
+     <MainPageBtn cardHandler={cardHandler} displayCard={displayCard}/>
      </div>
   )
 }

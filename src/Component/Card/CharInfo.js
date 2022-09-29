@@ -21,14 +21,14 @@ const CharInfo = () => {
         ({ char, world }) => {
           const handleTouchEnd = (event) => {
             if(touchEnd-touchStart > 150){
-              setIsSwipe((isSwipe < 0 && isSwipe+414));
+              setIsSwipe((isSwipe < 0 && isSwipe+408));
             }
             if(touchEnd-touchStart < -  150){
-              if(isSwipe === -(414 * ((char.length)-1))){
+              if(isSwipe === -(408 * ((char.length)-1))){
                 setIsSwipe(0);
                 
             }else {
-              setIsSwipe((isSwipe-414));
+              setIsSwipe((isSwipe-408));
             }
             }
           }

@@ -6,6 +6,7 @@ import WorldChoice from "../section/WorldChoice";
 import ContextWorld from "../ContextWorld";
 import ContextChar from "../ContextChar";
 import CharCard from '../Card/CharCard';
+import CardFooter from "./CardFooter";
 
 const BackGround = () => {
   const [world,setWorld] = useState('전체월드선택');
@@ -19,7 +20,7 @@ const BackGround = () => {
     lv: '124',
     charImg:"https://avatar.maplestory.nexon.com/Character/HHMFCEFBNCHFBJILMGGJNPLMDPAALJDPKKGAEOAKCMLBLLOCFGDOLDFOMALJGEFBOPBMDECKHPKFCIDICHDLNBLIIBFFPOADHCLECBELEKEPEMFCOHIPKPHFNPKLJDFPMKCIJNGFDIKJKBLOJILOFHJAHKOMDCBBDJGPLPNINDEEJNEFEPNPJKKIMHMCPDDJIBGACDCIHKBPOIBPMBCJCAFJCMPNPOPHIJFPJKKBPDHMFKKBHIPKEMIPMBHDCHJG.png",
      },{ 
-      world: "루나",
+      world: "크로아",
       img:'https://cdn.maple.gg/images/maplestory/world/ico_world_luna.gif',
       id: "123",
       lv: '124',

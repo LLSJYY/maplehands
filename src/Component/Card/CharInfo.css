@@ -9,6 +9,15 @@
   overflow: hidden;
 } 
 
+.slider-wrapper2 {
+  top: 0;
+  left: 0;
+  display: grid;
+  grid-template-columns: repeat(1,1fr);
+  gap: 0.5rem;
+  width: 33%;
+  height: 60%;
+} 
 
 .slider-wrapper-container {
   box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0.33);

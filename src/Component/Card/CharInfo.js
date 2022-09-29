@@ -2,21 +2,24 @@ import {React,useState} from "react";
 import ContextWorld from "../ContextWorld";
 import './CharInfo.css'
 
-const CharInfo = () => {
+const CharInfo = (props) => {
   const [touchStart,setTouchStart] = useState(0);  
   const [touchEnd,setTouchEnd] = useState(0);
   const [isSwipe,setIsSwipe] = useState(null);
   const bookmarkIMG = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRYrUR6Nkx5F-u4mvQFHrDKVts6KAGTKFwGA&usqp=CAU"
+  const displayCard = props.displayCard;
+  
   const handleTouchStart = (event) => {
     setTouchStart(event.targetTouches[0].clientX)
   }
   const handleTouchMove = (event) => {
-    
+    //help
     setTouchEnd(event.targetTouches[0].clientX)
     
   }
+  console.log(touchStart,touchEnd,isSwipe);
     return (
-    <div className="slider-wrapper" >
+    <div className={`${displayCard ? "slider-wrapper" : "slider-wrapper2"}`} >
       <ContextWorld.Consumer>{
         ({ char, world }) => {
           const handleTouchEnd = (event) => {
@@ -65,7 +68,8 @@ const CharInfo = () => {
         }
       }
       </ContextWorld.Consumer>
-    </div>)
+    </div>
+    )
 }
 
 export default CharInfo;  

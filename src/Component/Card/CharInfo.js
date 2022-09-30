@@ -34,13 +34,14 @@ const CharInfo = (props) => {
               setIsSwipe((isSwipe-408));
             }
             }
+            
           }
           // eslint-disable-next-line no-lone-blocks
           {
             return char.map((el, index) => {
               if (world === el.world || world === '전체월드선택') {
                 return (
-                  <div className="slider-wrapper-container" key={index}  onTouchStart={handleTouchStart}  onTouchMove={handleTouchMove} onTouchEnd={handleTouchEnd}  style={{transform :`translateX(${isSwipe}px)`}} >
+                  <div className="slider-wrapper-container" key={index}  onTouchStart={handleTouchStart}  onTouchEnd={handleTouchEnd} onTouchMove={handleTouchMove}  style={{transform :`translateX(${isSwipe}px)`}} >
 
                     <div className="header">
                       <input className="info world" type="image" src={el.img} alt="" />
@@ -60,9 +61,7 @@ const CharInfo = (props) => {
                       </div>
                     </div>
                   </div>)
-              } else {
-                return <span>Todo</span>
-              }
+              } 
             })
           }
         }

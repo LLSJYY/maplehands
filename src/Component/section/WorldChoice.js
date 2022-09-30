@@ -4,14 +4,39 @@ import ContextWorld from "../ContextWorld";
 
 const WolrdChoice = (props) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [worldName, setWorldName] = useState({name:"전체 월드 선택",img:"https://cdn.maple.gg/images/bigpidakgg-style/ico-maple.svg"});
+ 
   const spanStyle = {
     fontSize: '0.75rem',
     borderRadius: '30px',
     border: '1px solid black',
     padding: '0.5rem 1rem',
-    margin: '2rem',
+    marginLeft: '2rem',
     backgroundColor: 'fff',
+    display:'inline-flex',
+  };
+  /* world Data ㅜㅜ*/
+  const world = [{
+    name:'전체 월드 선택',
+    img:"https://cdn.maple.gg/images/bigpidakgg-style/ico-maple.svg",
+  },{
+    name:'스카니아',
+    img:"https://cdn.maple.gg/images/maplestory/world/ico_world_scania.gif",
+  },{
+    name:'크로아',
+    img:"https://cdn.maple.gg/images/maplestory/world/ico_world_croa.gif",
+  },{
+    name:'루나',
+    img:"https://cdn.maple.gg/images/maplestory/world/ico_world_luna.gif",
+  },{
+    name:'엘리시움',
+    img:"https://cdn.maple.gg/images/maplestory/world/ico_world_elysium.gif",
+  },];
+
+  const updateWorldName = (data) => {
+    setWorldName({name:data.name,img:data.img})
   }
+  
   const handler = () => {
     setIsOpen(!isOpen);
   }
@@ -19,9 +44,10 @@ const WolrdChoice = (props) => {
     setIsOpen(false);
 
   }
+
   return (
     <>
-      <span onClick={handler} style={spanStyle}> ✓ 전체 월드 선택 </span>
+      <div style={spanStyle} onClick={handler}><input type="image" src={`${worldName.img}`} alt="" /><span>{`${worldName.name}`}</span></div>
       <ReactModal onRequestClose={handleCloseModal} ariaHideApp={false} style={{
         overlay: {
           position: 'fixed',
@@ -42,13 +68,13 @@ const WolrdChoice = (props) => {
           overflow: 'auto',
           WebkitOverflowScrolling: 'touch',
           borderRadius: '4px',
-          outline: 'none',
+          outline : 'none',
           padding: '20px'
         }
       }} isOpen={isOpen}
       ><ul style={{marginBottom:"1rem"}}>월드 선택
           <ContextWorld.Consumer>{
-          ({store})=>  store.map((el,index)=> <button key = {index} onClick={()=>{{props.setWorld(el.world); return setIsOpen(false);} }}style={{display:"flex",border:'none',backgroundColor:'#fff', marginTop:'1rem'}}><img src={`${el.img}`} alt=""></img>{el.world}</button>)}
+          ({char}) => char.reduce((acc, curr) =>  { if(acc.findIndex(({world}) => world === curr.world)=== -1){acc.push(curr);} return acc;},[]).map((el,index) => <li  style={{listStyle:"none", marginTop:"0.5rem"}}key ={index} onClick={(e)=> updateWorldName({img:el.img,name:el.world})}><input type="image" src={el.img} alt="world-icon"/><span>{el.world}</span></li> )}
           </ContextWorld.Consumer>
         </ul>
       </ReactModal>

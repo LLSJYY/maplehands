@@ -34,7 +34,8 @@ const WolrdChoice = (props) => {
   },];
 
   const updateWorldName = (data) => {
-    setWorldName({name:data.name,img:data.img})
+    setWorldName({name:data.name,img:data.img});
+    setIsOpen(false);
   }
   
   const handler = () => {
@@ -47,7 +48,7 @@ const WolrdChoice = (props) => {
 
   return (
     <>
-      <div style={spanStyle} onClick={handler}><input type="image" src={`${worldName.img}`} alt="" /><span>{`${worldName.name}`}</span></div>
+      <div style={spanStyle} onClick={handler}><input type="image" src={`${worldName.img}`} style={{paddingRight:"0.5rem"}} alt="" /><span>{` ${worldName.name}`}</span></div>
       <ReactModal onRequestClose={handleCloseModal} ariaHideApp={false} style={{
         overlay: {
           position: 'fixed',

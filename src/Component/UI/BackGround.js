@@ -22,19 +22,19 @@ const BackGround = () => {
      },{ 
       world: "크로아",
       img:'https://cdn.maple.gg/images/maplestory/world/ico_world_croa.gif',
-      id: "123",
+      id: "크로아",
       lv: '124',
       charImg:"https://avatar.maplestory.nexon.com/Character/HHMFCEFBNCHFBJILMGGJNPLMDPAALJDPKKGAEOAKCMLBLLOCFGDOLDFOMALJGEFBOPBMDECKHPKFCIDICHDLNBLIIBFFPOADHCLECBELEKEPEMFCOHIPKPHFNPKLJDFPMKCIJNGFDIKJKBLOJILOFHJAHKOMDCBBDJGPLPNINDEEJNEFEPNPJKKIMHMCPDDJIBGACDCIHKBPOIBPMBCJCAFJCMPNPOPHIJFPJKKBPDHMFKKBHIPKEMIPMBHDCHJG.png",
        },{ 
-        world: "루나",
-        img:'https://cdn.maple.gg/images/maplestory/world/ico_world_luna.gif',
-        id: "111",
+        world: "스카니아",
+        img:'https://cdn.maple.gg/images/maplestory/world/ico_world_scania.gif',
+        id: "스카니아",
         lv: '124',
         charImg:"https://avatar.maplestory.nexon.com/Character/HHMFCEFBNCHFBJILMGGJNPLMDPAALJDPKKGAEOAKCMLBLLOCFGDOLDFOMALJGEFBOPBMDECKHPKFCIDICHDLNBLIIBFFPOADHCLECBELEKEPEMFCOHIPKPHFNPKLJDFPMKCIJNGFDIKJKBLOJILOFHJAHKOMDCBBDJGPLPNINDEEJNEFEPNPJKKIMHMCPDDJIBGACDCIHKBPOIBPMBCJCAFJCMPNPOPHIJFPJKKBPDHMFKKBHIPKEMIPMBHDCHJG.png",
          },{ 
-          world: "루나",
-          img:'https://cdn.maple.gg/images/maplestory/world/ico_world_luna.gif',
-          id: "aisd",
+          world: "엘리시움",
+          img:'https://cdn.maple.gg/images/maplestory/world/ico_world_elysium.gif',
+          id: "엘리시움",
           lv: '124',
           charImg:"https://avatar.maplestory.nexon.com/Character/HHMFCEFBNCHFBJILMGGJNPLMDPAALJDPKKGAEOAKCMLBLLOCFGDOLDFOMALJGEFBOPBMDECKHPKFCIDICHDLNBLIIBFFPOADHCLECBELEKEPEMFCOHIPKPHFNPKLJDFPMKCIJNGFDIKJKBLOJILOFHJAHKOMDCBBDJGPLPNINDEEJNEFEPNPJKKIMHMCPDDJIBGACDCIHKBPOIBPMBCJCAFJCMPNPOPHIJFPJKKBPDHMFKKBHIPKEMIPMBHDCHJG.png",
            }]

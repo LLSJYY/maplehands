@@ -14,15 +14,18 @@ const CharInfo = (props) => {
   }
   const handleTouchMove = (event) => {
     //help
-    setTouchEnd(event.targetTouches[0].clientX)
+    setTouchEnd(event.changedTouches[0].clientX)
     
   }
-  console.log(touchStart,touchEnd,isSwipe);
+  console.log(touchStart,touchEnd);
     return (
     <div className={`${displayCard ? "slider-wrapper" : "slider-wrapper2"}`} >
       <ContextWorld.Consumer>{
         ({ char, world }) => {
           const handleTouchEnd = (event) => {
+            if(touchEnd === 0){
+              return;
+            }
             if(touchEnd-touchStart > 150){
               setIsSwipe((isSwipe < 0 && isSwipe+408));
             }
@@ -34,7 +37,7 @@ const CharInfo = (props) => {
               setIsSwipe((isSwipe-408));
             }
             }
-            
+            setTouchEnd(0);
           }
           // eslint-disable-next-line no-lone-blocks
           {
@@ -61,7 +64,9 @@ const CharInfo = (props) => {
                       </div>
                     </div>
                   </div>)
-              } 
+              } else {
+                return <span>Todo</span>
+              }
             })
           }
         }

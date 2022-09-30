@@ -42,7 +42,7 @@ const CharInfo = (props) => {
           // eslint-disable-next-line no-lone-blocks
           {
             return char.map((el, index) => {
-              if (world === el.world || world === '전체월드선택') {
+              if (world === el.world || world === '전체 월드 선택') {
                 return (
                   <div className="slider-wrapper-container" key={index}  onTouchStart={handleTouchStart}  onTouchEnd={handleTouchEnd} onTouchMove={handleTouchMove}  style={{transform :`translateX(${isSwipe}px)`}} >
 
@@ -64,9 +64,7 @@ const CharInfo = (props) => {
                       </div>
                     </div>
                   </div>)
-              } else {
-                return <span>Todo</span>
-              }
+              } 
             })
           }
         }

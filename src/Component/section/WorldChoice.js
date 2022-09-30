@@ -45,7 +45,7 @@ const WolrdChoice = (props) => {
     setIsOpen(false);
 
   }
-
+  props.worldName(worldName);
   return (
     <>
       <div style={spanStyle} onClick={handler}><input type="image" src={`${worldName.img}`} style={{paddingRight:"0.5rem"}} alt="" /><span>{` ${worldName.name}`}</span></div>

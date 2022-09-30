@@ -9,10 +9,12 @@ import CharCard from '../Card/CharCard';
 import CardFooter from "./CardFooter";
 
 const BackGround = () => {
-  const [world,setWorld] = useState('전체월드선택');
-  const setWorldFn = (data) => {
-    setWorld(data);
+  const [world,setWorld] = useState('전체 월드 선택');  
+  const worldName = (data)=> {
+    setWorld(data.name);
+    
   }
+  console.log(world);
   const char = [{ 
     world: "루나",
     img:'https://cdn.maple.gg/images/maplestory/world/ico_world_luna.gif',
@@ -54,7 +56,7 @@ const BackGround = () => {
           <Alert />
           <Title />
         </header>
-        <WorldChoice setWorld={setWorldFn} />
+        <WorldChoice worldName={worldName} />
         <div>
           <CharCard/>
         </div>

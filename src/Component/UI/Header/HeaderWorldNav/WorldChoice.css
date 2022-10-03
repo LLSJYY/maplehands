@@ -1,0 +1,17 @@
+.nav-world-choice {
+    font-size: 0.75rem;
+    border-radius: 30px;
+    border: 1px solid black;
+    padding: 0.5rem 1rem;
+    margin-left: 2rem;
+    background-color: fff;
+    display:inline-flex;
+}
+.modal-world{
+    list-style: none;
+    margin-bottom: 1rem;
+}
+
+#modal-world-name{
+    margin-top: 0.5rem;
+}

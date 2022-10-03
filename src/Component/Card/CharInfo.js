@@ -19,7 +19,6 @@ const CharInfo = (props) => {
   const handleBookmark = ()=> {
   
   }
-  console.log(touchStart,touchEnd);
     return (
       <div className="container">
             <div className={`${displayCard ? "slider-wrapper" : "slider-wrapper2"}`} >

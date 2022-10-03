@@ -3,6 +3,7 @@ import './MainPageBtn.css';
 const MainPageBtn = (props) => {
   const conHandler = (event) => {
     props.cardHandler(!props.displayCard)
+    console.log()
   };
 
   return (

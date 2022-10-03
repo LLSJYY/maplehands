@@ -1,18 +1,15 @@
-import React, { useState } from "react";
-import WorldChoice from "../section/WorldChoice";
+import React, { useEffect, useState } from "react";
+import WorldChoice from "./Header/HeaderWorldNav/WorldChoice";
 import ContextWorld from "../ContextWorld";
-import ContextChar from "../ContextChar";
 import CharCard from '../Card/CharCard';
-import CardFooter from "./CardFooter";
-import HeaderNav from "./Header/HeaderNav";
+import Header from "./Header/Header.js";
 
 const BackGround = () => {
-  const [world,setWorld] = useState('전체 월드 선택');  
-  const worldName = (data)=> {
-    setWorld(data.name);
-    
-  }
-  console.log(world);
+  const [world,setWorld] = useState({
+    id:'전체 월드 선택',
+    img:"https://cdn.maple.gg/images/bigpidakgg-style/ico-maple.svg",
+  });  
+  
   const char = [{ 
     world: "루나",
     img:'https://cdn.maple.gg/images/maplestory/world/ico_world_luna.gif',
@@ -42,24 +39,13 @@ const BackGround = () => {
           charImg:"https://avatar.maplestory.nexon.com/Character/HHMFCEFBNCHFBJILMGGJNPLMDPAALJDPKKGAEOAKCMLBLLOCFGDOLDFOMALJGEFBOPBMDECKHPKFCIDICHDLNBLIIBFFPOADHCLECBELEKEPEMFCOHIPKPHFNPKLJDFPMKCIJNGFDIKJKBLOJILOFHJAHKOMDCBBDJGPLPNINDEEJNEFEPNPJKKIMHMCPDDJIBGACDCIHKBPOIBPMBCJCAFJCMPNPOPHIJFPJKKBPDHMFKKBHIPKEMIPMBHDCHJG.png",
           bookmark : false,  
         }]
-  const store = [{
-    world: "루나",
-    img: 'https://cdn.maple.gg/images/maplestory/world/ico_world_luna.gif'
-  },{
-    world: "크로아",
-    img: 'https://cdn.maple.gg/images/maplestory/world/ico_world_luna.gif'
-  }]
-
-  console.log(char);
+        console.log(world);
   return (
     <>
-      <ContextWorld.Provider value={{store,char,world}}>
-        <HeaderNav/>
-        <WorldChoice worldName={worldName} />
-        <div>
-          <CharCard/>
-        </div>
-      </ContextWorld.Provider>
+      <ContextWorld.Provider value={{char,world,setWorld}}>
+        <Header/>        
+        <CharCard/>
+        </ContextWorld.Provider>
     </>
   );
 }

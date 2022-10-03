@@ -6,6 +6,7 @@ const CharInfo = (props) => {
   const [touchStart,setTouchStart] = useState(0);  
   const [touchEnd,setTouchEnd] = useState(0);
   const [isSwipe,setIsSwipe] = useState(null);
+  const [isChecked,setIsChecked] = useState(false);
   const bookmarkIMG = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRYrUR6Nkx5F-u4mvQFHrDKVts6KAGTKFwGA&usqp=CAU"
   const displayCard = props.displayCard;
   
@@ -13,13 +14,15 @@ const CharInfo = (props) => {
     setTouchStart(event.targetTouches[0].clientX)
   }
   const handleTouchMove = (event) => {
-    //help
-    setTouchEnd(event.changedTouches[0].clientX)
-    
+    setTouchEnd(event.changedTouches[0].clientX)    
+  }
+  const handleBookmark = ()=> {
+  
   }
   console.log(touchStart,touchEnd);
     return (
-    <div className={`${displayCard ? "slider-wrapper" : "slider-wrapper2"}`} >
+      <div className="container">
+            <div className={`${displayCard ? "slider-wrapper" : "slider-wrapper2"}`} >
       <ContextWorld.Consumer>{
         ({ char, world }) => {
           const handleTouchEnd = (event) => {
@@ -44,11 +47,11 @@ const CharInfo = (props) => {
             return char.map((el, index) => {
               if (world === el.world || world === '전체 월드 선택') {
                 return (
-                  <div className="slider-wrapper-container" key={index}  onTouchStart={handleTouchStart}  onTouchEnd={handleTouchEnd} onTouchMove={handleTouchMove}  style={{transform :`translateX(${isSwipe}px)`}} >
+                  <div className={`${displayCard ? "slider-wrapper-container" : "slider-wrapper2-container"}`} key={index}  onTouchStart={handleTouchStart}  onTouchEnd={handleTouchEnd} onTouchMove={handleTouchMove}  style={{transform :`translateX(${isSwipe}px)`}} >
 
                     <div className="header">
                       <input className="info world" type="image" src={el.img} alt="" />
-                      <input className="info bookmark" type="image" src={bookmarkIMG} alt="" />
+                      <input className="info bookmark" type="image" src={el.bookmark ? 'bookmarkIMG' : bookmarkIMG} alt="" onClick={()=>{el.bookmark = !el.bookmark}}/>
                     </div>
                     <div className="main">
                       <input className="info character" type="image" src={el.charImg} alt="" />
@@ -70,6 +73,8 @@ const CharInfo = (props) => {
         }
       }
       </ContextWorld.Consumer>
+      </div>
+
     </div>
     )
 }

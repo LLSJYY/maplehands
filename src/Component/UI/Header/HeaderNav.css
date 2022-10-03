@@ -1,0 +1,22 @@
+.header-nav {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+
+}
+
+#nav-hamburger-menu-icon{
+  width: 2rem;
+  height: 2rem;
+  margin: 2rem;
+}
+#nav-alertr-menu-icon{
+  width: 2rem;
+  height: 2rem;
+  margin: 2rem;
+}
+
+#nav-logo {
+  margin: 2rem;
+  font-size: 1.5rem;
+}

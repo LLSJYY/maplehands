@@ -5,8 +5,9 @@ import MainPageBtn from "../UI/MainPageBtn";
 import CardFooter from "../UI/CardFooter";
 import './scroll.css'
 
-const CharCard = () => {
+const CharCard = (props) => {
   const [displayCard,setDisplayCard] = useState(true);
+  const store = props.store;
   const cardHandler = (status) => {
     setDisplayCard(status);
   }  
@@ -18,7 +19,7 @@ const CharCard = () => {
 
      <MainPageBtn cardHandler={cardHandler} displayCard={displayCard}/>
      </div>
-  )
+  ) 
 }
 
 export default CharCard;  
